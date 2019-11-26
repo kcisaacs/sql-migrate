@@ -15,12 +15,15 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	_ "github.com/lib/pq"
 	_ "github.com/mattn/go-sqlite3"
+	_ "github.com/mattn/go-oci8"
 )
 
 var dialects = map[string]gorp.Dialect{
 	"sqlite3":  gorp.SqliteDialect{},
 	"postgres": gorp.PostgresDialect{},
 	"mysql":    gorp.MySQLDialect{Engine: "InnoDB", Encoding: "UTF8"},
+	"oci8":     gorp.OracleDialect{},
+
 }
 
 var ConfigFile string
